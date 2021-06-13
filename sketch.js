@@ -76,8 +76,6 @@ function setup() {
   bkgrdSound.loop();
   
   shots = new Group();
-  gpkgrp = new Group();
-  epkgrp = new Group();
   fill(255); 
 }
 
