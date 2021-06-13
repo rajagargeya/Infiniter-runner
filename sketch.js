@@ -1,7 +1,5 @@
 var wii,wi;
 var gii,gi;
-var epki,epk,epkgrp;
-var gpki,gpk,gpkgrp;
 var bki;
 var grdi,grd;
 var shi,sh;
@@ -28,8 +26,6 @@ function preload() {
   
   bki = loadImage("bkgrd.jpg");
   grdi = loadImage("grass2.PNG");
-  gpki = loadImage("good pmk.png");
-  epki = loadImage("evil pmk.png");
   shi = loadImage("LA.png");
   tri = loadImage("tree1.png");
   hi = loadImage("house.png");
@@ -122,8 +118,6 @@ function draw() {
       gmst = "end";
       wi.y = 400;
       gi.y = 400;
-      epkgrp.destroyEach();
-      gpkgrp.destroyEach();
       shots.destroyEach();
       gmor.visible = true;
       bkgrdSound.pause();
@@ -175,36 +169,9 @@ function hits(){
       hit = hit +1;
     }
   }
-  for (j = 0; j <gpkgrp.length; j++){ 
-  if(gpkgrp[j].isTouching(gi)){
-    score = score +5;
-    gpkgrp[j].destroy();
-  }
- }
-  for (k = 0; k <epkgrp.length; k++){
-    if(epkgrp[k].isTouching(gi)){
-      score = score -2;
-      epkgrp[k].destroy();
-    }
-  }
+  
 }
-function gpumpkin(){
-  gpk = createSprite(610,260,20,20);
-  gpk.addImage(gpki);
-  gpk.scale = 0.06;
-  gpk.velocityX = -4;
-  gpk.depth = grd.depth -1;
-  gpk.lifetime = 160;
-  gpkgrp.add(gpk);
-  }
-function epumpkin(){
-  epk = createSprite(610,260,20,20);
-  epk.addImage(epki);
-  epk.scale = 0.3;
-  epk.velocityX = -4;
-  epk.depth = grd.depth -1;
-  epkgrp.add(epk);
-}
+
 function Reset(){
   if(mousePressedOver(rest)){
      if(mouseDown("leftButton")){
