@@ -104,12 +104,7 @@ function draw() {
     laserSound.play();
   }
   
-  if(frameCount%150===0){
-    gpumpkin();
-  }
-  if(frameCount%Math.round(random(220,250))===0){
-    epumpkin();
-  }
+ 
   if(frameCount%300===0){
     laughSound.play();
   }  
